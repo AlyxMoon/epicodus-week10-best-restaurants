@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -14,5 +15,12 @@ namespace Restaurants.Models
     [DataType(DataType.MultilineText)]
     [DisplayName("Description")]
     public string Description { get; set; }
+
+    public virtual ICollection<Restaurant> Restaurants { get; set; }
+
+    public Cuisine ()
+    {
+      this.Restaurants = new HashSet<Restaurant>();
+    }
   }
 }

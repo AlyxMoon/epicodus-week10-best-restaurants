@@ -1,0 +1,55 @@
+@using Restaurants.Models
+@model Restaurant
+
+
+<section class="card">
+  <div class="card-header">
+    <h2 class="card-title">Create a new restaurant</h2>
+  </div>
+
+  <div class="card-body">
+    <form asp-action="Create">
+      <div class="row mb-3">
+        <label 
+          asp-for="Id_Cuisine" 
+          class="col-sm-2 col-form-label"
+        ></label>
+        <select 
+          asp-for="Id_Cuisine" 
+          asp-items="@ViewBag.Cuisines"
+          class="form-select"
+          required
+        ></select>
+      </div>
+
+      <div class="row mb-3">
+        <label 
+          asp-for="Name"
+          class="col-sm-2 col-form-label"
+        ></label>
+        <input 
+          asp-for="Name"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <div class="row mb-3">
+        <label 
+          asp-for="Description"
+          class="col-sm-2 col-form-label"
+        ></label>
+        <input 
+          asp-for="Description"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <button 
+        type="submit"
+        class="btn btn-primary"
+      >Create Restaurant</button>
+    </form>
+  </div>
+</section>
