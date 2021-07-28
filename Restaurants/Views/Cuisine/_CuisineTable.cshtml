@@ -1,0 +1,36 @@
+@using System.Collections.Generic
+@using Restaurants.Models
+@model List<Cuisine>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    @if (Model.Count == 0)
+    {
+      <tr><td colspan="4">No cuisines Yet</td></tr>
+    }
+
+    @foreach (Cuisine cuisine in Model)
+    {
+      <tr>
+        <td>
+          <a 
+            asp-action="Delete"
+            asp-route-cuisineId="@cuisine.Id"
+            class="btn btn-danger"
+          >Delete</a>
+        </td>
+        <td>@cuisine.Id</td>
+        <td>@cuisine.Name</td>
+        <td>@cuisine.Description</td>
+      </tr>
+    }
+  </tbody>
+</table>

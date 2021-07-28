@@ -8,6 +8,10 @@
     <title>Restaurant Search</title>
   </head>
   <body>
-    @RenderBody()
+    @await Html.PartialAsync("Navbar")
+
+    <main>
+      @RenderBody()
+    </main>
   </body>
 </html>

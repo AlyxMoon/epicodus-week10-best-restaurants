@@ -1,0 +1,17 @@
+@using Restaurants.Models
+@model Cuisine
+
+<h1>Create a new Cuisine</h1>
+
+<form asp-action="Create">
+  
+  <label asp-for="Name"></label>
+  <input asp-for="Name" required />
+
+  <label asp-for="Description"></label>
+  <textarea asp-for="Description"></textarea>
+
+  <div asp-validation-summary="All"></div>
+
+  <button type="submit">Create Cuisine</button>
+</form>

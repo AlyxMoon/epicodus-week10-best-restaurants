@@ -1,0 +1,12 @@
+@using System.Collections.Generic
+@using Restaurants.Models
+@model List<Cuisine>
+@{
+  Layout = "_Layout";
+}
+
+<h1>Cuisines</h1>
+
+<partial name="_FormAddNew" model="new Cuisine()" />
+<partial name="_CuisineTable" />
+
